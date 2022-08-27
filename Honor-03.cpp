@@ -16,7 +16,7 @@ int minCapcity(int a[], int n)
     int halfSum = sum / 2;
     vector<int> dp(halfSum + 1);
     for (int cap = 0; cap <= halfSum; ++cap)
-        dp[cap] = cap >= a[0] ? a[0] : 0;
+        dp[cap] = 0;
 
     for (int i = 0; i < n; ++i)
     {
@@ -31,7 +31,7 @@ int minCapcity(int a[], int n)
 
 int main()
 {
-    int items[] = {2,3,4,5,6};
+    int items[] = {100,1,2,3,99};
     cout << minCapcity(items, 5) << endl;
 
     return 0;
