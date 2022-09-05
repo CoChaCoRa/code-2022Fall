@@ -12,13 +12,13 @@ vector<int> buildNext(string needle) {
         if(needle[x] == needle[now]) {
             ++x;
             ++now;
-            next[x] = now;
+            next.push_back(now);
         }
         else if(now) {
             now = next[now - 1];
         }
         else {
-            next[x] = 0;
+            next.push_back(0);
             ++x;
         }
     }
@@ -52,6 +52,6 @@ int strStr(string haystack, string needle) {
 int main()
 {
     string haystack = "hello";
-    string needle = "ll";
+    string needle = "he";
     cout<<strStr(haystack, needle)<<endl;
 }
